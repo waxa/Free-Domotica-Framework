@@ -1,0 +1,20 @@
+{
+  "name": "appDomotica",
+  "version": "0.0.0",
+  "authors": [
+    "waxa <waxa@gmail.com>"
+  ],
+  "license": "GPL2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.8.3",
+    "angular-new-router": "~0.5.3",
+    "ngCordova": "~0.1.15-alpha"
+  }
+}

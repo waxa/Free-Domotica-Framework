@@ -1,0 +1,30 @@
+<md-content layout="column" layout-fill ng-controller="LoginController as login">
+	<md-toolbar class="md-primary">
+ 		<div class="md-toolbar-tools">
+ 			<h2> 
+ 				<span> Login <span>
+ 			</h2>
+ 		</div>
+ 	</md-toolbar>
+
+ 	<md-content layout-padding layout-margin layout-fill layout-align="center center">
+	 	<form name="loginForm"  layout="column" ng-submit="login.log()">
+	 		<md-input-container layout="column" layout-margin >
+	 			<label>Usuario</label>
+	      		<input ng-model="login.registro.user" type="text" placeholder="Introduce tu nombre de usuario">
+	 		</md-input-container>
+	 		<md-input-container layout="column" layout-fill>
+	 			<label>Contraseña</label>
+	      		<input ng-model="login.registro.pass" type="password" placeholder="Introduce tu contraseña">
+	 		</md-input-container>
+	 		<div layout="row" layout-wrap>
+	 			<div flex="35"></div>
+				<md-button class="md-raised md-primary" type="submit" flex="30">
+					Entrar
+				</md-button>
+				<div flex="35"></div>
+			</div>
+	 	</form>
+	</md-content>
+
+</md-content>
