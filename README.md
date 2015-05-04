@@ -40,11 +40,11 @@ Para iniciar el proyecto :
 
 Necesitas configurar el archivo appDomotica/app/ajustes.js con tus respectivos datos
 
-Si despues de hacer todo esto la app no funciona prueba a modificar el archivo cordovaBuild/config.xml y añade lo siguiente :
+Si despues de hacer todo esto la app no funciona prueba a modificar el archivo cordovaBuild/config.xml y añade lo siguiente (con el formato xml):
 	<ul>
-		<li><access origin="*" /></li>
-    	<li><allow-navigation href="*" /></li>
-    	<li><allow-intent href="*" /></li>
+		<li> access origin="*" </li>
+    	<li> allow-navigation href="*" </li>
+    	<li> allow-intent href="*" </li>
 	</ul>
 
 Esto ultimo es una burrada, deberia funcionar solo con lo anterior, probarlo solo como ultimo recurso
