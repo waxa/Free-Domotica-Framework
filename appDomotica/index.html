@@ -32,7 +32,7 @@
                 } catch (e) {
                     alert(e);
                 }
-            }
+            };
 
  			document.addEventListener("deviceready", function(){
  				angular.bootstrap(document, ['app']);
@@ -43,9 +43,13 @@
 
 	</head>
 
-	<body ng-app="app" ng-controller="AppController as appController">
+	<!-- <body ng-app="app"> -->
+	<body>
+		<div ng-controller="AppController as appController">
 		
-		<div ng-viewport></div>
+			<div ng-viewport></div>
+
+		</div>
 
 		<script type="text/javascript" charset="utf-8" src="bower_components/angular/angular.js"></script>
 		<script type="text/javascript" charset="utf-8" src="bower_components/angular-new-router/dist/router.es5.js"></script>
@@ -55,7 +59,8 @@
 		<script type="text/javascript" charset="utf-8" src="bower_components/ngCordova/dist/ng-cordova.js"></script>
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script type="text/javascript" charset="utf-8" src="app/PushNotification.js"></script>
-		<script type="text/javascript" src="app/app.js"></script>
+		<script type="text/javascript" charset="utf-8" src="app/app.js"></script>
+		<script type="text/javascript" charset="utf-8" src="app/ajustes.js"></script>
 		<script type="text/javascript" charset="utf-8" src="components/login/login.js"></script>
 		<script type="text/javascript" charset="utf-8" src="components/dispositivos/dispositivos.js"></script>
 		

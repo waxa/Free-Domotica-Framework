@@ -1,6 +1,6 @@
-var app = angular.module('app.login', ['ngMaterial', 'ngNewRouter']);
+var app = angular.module('app.login', ['ngMaterial','ngNewRouter']);
   	
-app.controller('LoginController', ['$router', '$location', '$http', LoginController]);
+app.controller('LoginController', ['$location', '$http', LoginController]);
 
 app.run(function ($location, $http){
   		
@@ -28,8 +28,8 @@ app.run(function ($location, $http){
 
 });
 
-function LoginController ($router, $location, $http) {
-	
+function LoginController ($location, $http) {
+
 	var login = this;
 
 	//login.url = "http://0.0.0.0:3030/registro/"
@@ -52,7 +52,10 @@ function LoginController ($router, $location, $http) {
 			$location.path('dispositivos');	
       	}).error(function(data){
         	console.log("error", data);
-        	login.registro = {};
+        	login.registro = {};	
       	});
+
+      	//sample
+      	$location.path('dispositivos');	
 	};
 };

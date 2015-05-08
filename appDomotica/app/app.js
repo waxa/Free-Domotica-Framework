@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngCordova', 'ngNewRouter', 'ngMaterial', 'ajustes', 'app.login', 'app.dispositivos']);
+var app = angular.module('app', ['ngCordova', 'ngNewRouter', 'ngMaterial', 'ajustes', 'app.login', 'app.dispositivos', 'app.test']);
 
 app.factory('GCMRegistrationService', function(SENDER_ID) {
     var pushNotification = window.plugins.pushNotification;
@@ -48,6 +48,7 @@ app.factory('NotificationService', function($http, IP_REGISTRO) {
                         registerOn3rdPartyServer(e.regid);
                     break;
                 case 'message':
+                    alert(JSON.stringify(e));
                     console.log(JSON.stringify(e));
                     break;
                 case 'error':
@@ -59,6 +60,10 @@ app.factory('NotificationService', function($http, IP_REGISTRO) {
             }
         }
     };
+});
+
+app.factory('VistaNavService', function($http, &location){
+
 });
 
 app.run(function (GCMRegistrationService){
@@ -79,10 +84,12 @@ app.run(function (GCMRegistrationService){
 
 app.controller('AppController', ['$router', AppController]);
 
-AppController.$routeConfig = [
-	{ path: '/', redirectTo: '/login' },
-	{ path: '/login', component: 'login' },
-	{ path: '/dispositivos', component: 'dispositivos' }
-];
+function AppController ($router) {
 
-function AppController ($router) {};
+    $router.config([
+        { path: '/', redirectTo: '/login' },
+        { path: '/login', component: 'login' },
+        { path: '/dispositivos', component: 'dispositivos' }
+    ]);
+
+};

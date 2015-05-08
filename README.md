@@ -48,3 +48,13 @@ Si despues de hacer todo esto la app no funciona prueba a modificar el archivo c
 	</ul>
 
 Esto ultimo es una burrada, deberia funcionar solo con lo anterior, probarlo solo como ultimo recurso
+
+
+Trabajando en :
+	--> Pasar peticiones y navegacion a una factoria
+	--> Transformar material en bootstrap, para mejor multiplataforma
+
+Para el futuro :
+	--> Implementar push en el resto de plataformas
+	--> implementar base de datos de usuarios en el servidor centrar
+	--> Subir y completar la primera de las apis de la rasp

@@ -26,7 +26,7 @@ function DispositivosController ($http) {
       	});
 	};	
 
-	dispositivos.set = function (indice, dispo, estado){
+	dispositivos.set = function (indice, dispo, estado) {
 		$http.post(dispositivos.urlBase + 'setValue/', {
 			name : dispo.name,
 			state : estado
@@ -51,6 +51,6 @@ function DispositivosController ($http) {
 		}
 	};
 
-	dispositivos.get();
-	//dispositivos.relleno();
+	//dispositivos.get();
+	dispositivos.relleno();
 };
