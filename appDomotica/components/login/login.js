@@ -37,6 +37,10 @@ function LoginController ($location, $http) {
 
 	login.registro = {};
 
+	this.toTest = function (){
+		$location.path('test');	
+	};
+
 	login.log = function (){
 		login.registro.regid = localStorage.getItem('regid');
 		console.log(login.registro);

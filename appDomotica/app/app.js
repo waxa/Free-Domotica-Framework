@@ -62,9 +62,9 @@ app.factory('NotificationService', function($http, IP_REGISTRO) {
     };
 });
 
-app.factory('VistaNavService', function($http, &location){
+// app.factory('VistaNavService', function($http, &location){
 
-});
+// });
 
 app.run(function (GCMRegistrationService){
 	
@@ -89,7 +89,8 @@ function AppController ($router) {
     $router.config([
         { path: '/', redirectTo: '/login' },
         { path: '/login', component: 'login' },
-        { path: '/dispositivos', component: 'dispositivos' }
+        { path: '/dispositivos', component: 'dispositivos' },
+        { path: '/test', component: 'test' }
     ]);
 
 };
