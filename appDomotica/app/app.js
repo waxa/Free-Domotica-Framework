@@ -93,4 +93,6 @@ function AppController ($router) {
         { path: '/test', component: 'test' }
     ]);
 
+    this.debug = true;
+
 };

@@ -1,3 +1,28 @@
+<!-- <md-content layout="column" layout-fill ng-controller="DispositivosController as dispositivos">
+
+	<md-toolbar class="md-primary">
+ 		<div class="md-toolbar-tools">
+ 			<h2> 
+ 				<span> Dispositivos Conectados <span>
+ 			</h2>
+ 		</div>
+ 	</md-toolbar> 
+
+	<md-card layout="row" flex layout-align="center center" layout-margin ng-repeat="dispo in dispositivos.dispos">
+		<md-card-content layout-wrap layout-padding >
+			<h3>{{dispo.name}}</h3>
+		</md-card-content>
+		<md-card-content layout-wrap layout-padding layout="column">
+			<md-button class="md-raised md-primary" ng-hide="dispo.state"
+			 ng-click="dispositivos.set($index, dispo, true)">Encender</md-button>
+			<md-button class="md-raised md-warn" ng-show="dispo.state"
+			 ng-click="dispositivos.set($index, dispo, false)">Apagar</md-button>
+		</md-card-content>
+	</md-card>
+
+</md-content>
+ -->
+
 <!-- <div class="container-fluid" ng-controller="LoginController as login">	
 	
 	<div class="row barra">

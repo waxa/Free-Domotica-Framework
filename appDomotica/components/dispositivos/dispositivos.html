@@ -1,23 +1,25 @@
-<md-content layout="column" layout-fill ng-controller="DispositivosController as dispositivos">
+<div class="container-fluid" ng-controller="DispositivosController as dispositivos">	
+	
+	<div class="row barra centrar-texto">
+		<div class="col-md-12">
+			<h2 class="text-center">Dispositivos</h2>	
+		</div>
+	</div>
 
-	<md-toolbar class="md-primary">
- 		<div class="md-toolbar-tools">
- 			<h2> 
- 				<span> Dispositivos Conectados <span>
- 			</h2>
- 		</div>
- 	</md-toolbar> 
+	<div class="row bajar" ng-repeat="dispo in dispositivos.dispos">
+		
+		<div class="col-md-4">
+			<h2 class="text-center">{{dispo.name}}</h2>
+		</div>
 
-	<md-card layout="row" flex layout-align="center center" layout-margin ng-repeat="dispo in dispositivos.dispos">
-		<md-card-content layout-wrap layout-padding >
-			<h3>{{dispo.name}}</h3>
-		</md-card-content>
-		<md-card-content layout-wrap layout-padding layout="column">
-			<md-button class="md-raised md-primary" ng-hide="dispo.state"
-			 ng-click="dispositivos.set($index, dispo, true)">Encender</md-button>
-			<md-button class="md-raised md-warn" ng-show="dispo.state"
-			 ng-click="dispositivos.set($index, dispo, false)">Apagar</md-button>
-		</md-card-content>
-	</md-card>
+		<div class="col-md-4 col-md-offset-2" ng-show="dispo.state">
+			<button class="btn btn-primary btn-block text-center">Encender</button>
+		</div>
 
-</md-content>
+		<div class="col-md-4 col-md-offset-2" ng-hide="dispo.state">
+			<button class="btn btn-primary btn-block text-center bajar">Apagar</button>
+		</div>
+
+	</div>
+
+</div>
