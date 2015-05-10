@@ -62,10 +62,6 @@ app.factory('NotificationService', function($http, IP_REGISTRO) {
     };
 });
 
-// app.factory('VistaNavService', function($http, &location){
-
-// });
-
 app.run(function (GCMRegistrationService){
 	
     var androidConfig = {
