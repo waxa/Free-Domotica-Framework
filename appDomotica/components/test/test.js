@@ -1,4 +1,4 @@
-var app = angular.module('app.test', ['ngNewRouter']);
+var app = angular.module('app.test', []);
   	
 app.controller('TestController', [TestController]);
 

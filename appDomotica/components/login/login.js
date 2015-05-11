@@ -1,65 +1,24 @@
-var app = angular.module('app.login', ['ngMaterial','ngNewRouter']);
+var app = angular.module('app.login', ['app.factory']);
   	
-app.controller('LoginController', ['$location', '$http', LoginController]);
+app.controller('LoginController', ['ViewNavigation', LoginController]);
 
-app.run(function ($location, $http){
-  		
-	var registro = {};
-
-	//var url = "http://0.0.0.0:3030/registro/"
-	var url = "http://pasarela.lab.inf.uva.es:20062/registro/";
-
-	var logearse = function () {
-		$http.post(url, registro)
-        .success(function(data){
-    		console.log("success", data);
-    		$location.path('dispositivos');
-  		}).error(function(data){
-    		console.log("error", data);
-  		});
-	};
-
-	if (localStorage.getItem('user') &&	localStorage.getItem('pass') && localStorage.getItem('regid')) {
-		registro.user = localStorage.getItem('user');
-		registro.pass = localStorage.getItem('pass');
-		registro.regid = localStorage.getItem('regid');
-		logearse();
-	}
-
+app.run(function (ViewNavigation){
+	ViewNavigation.atLogin();
 });
 
-function LoginController ($location, $http) {
+function LoginController (ViewNavigation) {
 
 	var login = this;
-
-	//login.url = "http://0.0.0.0:3030/registro/"
-	login.url = "http://pasarela.lab.inf.uva.es:20062/registro/";
 
 	login.registro = {};
 
 	this.toTest = function (){
-		$location.path('test');	
+		ViewNavigation.toTest();	
 	};
 
 	login.log = function (){
 		login.registro.regid = localStorage.getItem('regid');
-		console.log(login.registro);
-		$http.post(login.url, login.registro)
-		.success(function(data){
-			console.log("success", data);
-
-        	localStorage.setItem('user', login.registro.user);
-			localStorage.setItem('pass', login.registro.pass);
-      		
-      		console.log("usuario guardado")
-			login.registro = {};
-			$location.path('dispositivos');	
-      	}).error(function(data){
-        	console.log("error", data);
-        	login.registro = {};	
-      	});
-
-      	//sample
-      	$location.path('dispositivos');	
+		ViewNavigation.logIn(login.registro);
+		login.registro = {};
 	};
 };

@@ -25,6 +25,53 @@ app.factory('GCMRegistrationService', function(SENDER_ID) {
     };
 });
 
+app.factory('ViewNavigation', function($location, $http){
+
+    //var url = "http://0.0.0.0:3030/registro/"
+    var url = "http://pasarela.lab.inf.uva.es:20062/registro/";
+
+    function logearse(registro) {
+        $http.post(url, registro)
+        .success(function(data){
+            $location.path('dispositivos');
+            saveCredentials(registro);
+        }).error(function(data){
+            console.log("error", data);
+        });
+    };
+
+    function isLogin(){
+        registro = {};
+        if (localStorage.getItem('user') && localStorage.getItem('pass') && localStorage.getItem('regid')) {
+            registro.user = localStorage.getItem('user');
+            registro.pass = localStorage.getItem('pass');
+            registro.regid = localStorage.getItem('regid');
+            logearse(registro);
+        }
+    };
+
+    function saveCredentials(registro){
+        localStorage.setItem('user', registro.user);
+        localStorage.setItem('pass', registro.pass);
+    };
+
+    return {
+        atLogin : function (){
+            isLogin();
+        },
+        toDispositivos : function(){
+            $location.path('dispositivos');
+        },
+        toTest : function(){
+            $location.path('test');
+        },
+        logIn : function(registro) {
+            logearse(registro);
+                
+        }
+    }
+});
+
 app.factory('NotificationService', function($http, IP_REGISTRO) {
 
     var deviceRegistrationId;

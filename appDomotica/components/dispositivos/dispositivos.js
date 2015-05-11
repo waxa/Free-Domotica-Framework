@@ -1,4 +1,4 @@
-var app = angular.module('app.dispositivos', ['ngMaterial']);
+var app = angular.module('app.dispositivos', []);
 	
 app.controller('DispositivosController', ['$http',DispositivosController]);
 
@@ -51,6 +51,6 @@ function DispositivosController ($http) {
 		}
 	};
 
-	//dispositivos.get();
-	dispositivos.relleno();
+	dispositivos.get();
+	//dispositivos.relleno();
 };

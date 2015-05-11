@@ -1,6 +1,15 @@
 .barra {
 	color:white;
 	background-color: blue;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 999;
+}
+
+.contenido {
+	margin-top: 73px;
 }
 
 .centrar-texto {

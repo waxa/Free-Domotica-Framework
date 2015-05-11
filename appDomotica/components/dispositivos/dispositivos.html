@@ -1,11 +1,12 @@
-<div class="container-fluid" ng-controller="DispositivosController as dispositivos">	
-	
-	<div class="row barra centrar-texto">
+<div class="container-fluid barra">
+	<div class="row centrar-texto">
 		<div class="col-md-12">
 			<h2 class="text-center">Dispositivos</h2>	
 		</div>
 	</div>
+</div>
 
+<div class="container-fluid contenido" ng-controller="DispositivosController as dispositivos">	
 	<div class="row bajar" ng-repeat="dispo in dispositivos.dispos">
 		
 		<div class="col-md-4 col-xs-4">
@@ -23,5 +24,4 @@
 		</div>
 
 	</div>
-
 </div>

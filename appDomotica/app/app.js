@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngNewRouter', 'ngMaterial', 'app.factory', 'app.login', 'app.dispositivos', 'app.test']);
+var app = angular.module('app', ['ngNewRouter', 'app.factory', 'app.login', 'app.dispositivos', 'app.test']);
 
 app.run(function (GCMRegistrationService){
     
@@ -14,6 +14,7 @@ app.run(function (GCMRegistrationService){
             GCMRegistrationService.registerOnGCM();
 
     }, false);
+
 });
 
 app.controller('AppController', ['$router', AppController]);
