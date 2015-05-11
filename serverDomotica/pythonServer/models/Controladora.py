@@ -6,9 +6,9 @@ import json
 
 class Controladora :
 
-    def __init__(self) :
-    	self.url = "http://95.39.206.192:5555/"
-    	self.idTest = "APA91bElBpkPMFmBX6kaifE_oPcMCXJu1lyTaW-zQKlHtDJM6PB-LzeAXFojMyYVPJ0g8E5_TmSBwku0W_8i1iKCgGMEMJrQleJtClriWS_O3EQeyQQRVjt5pt68QNNX-3YGgxKU-uBlRUClKci8pr9AQxO1u2ihGA"
+	def __init__(self) :
+		self.url = "http://95.39.206.192:5555/"
+		self.idTest = "APA91bElBpkPMFmBX6kaifE_oPcMCXJu1lyTaW-zQKlHtDJM6PB-LzeAXFojMyYVPJ0g8E5_TmSBwku0W_8i1iKCgGMEMJrQleJtClriWS_O3EQeyQQRVjt5pt68QNNX-3YGgxKU-uBlRUClKci8pr9AQxO1u2ihGA"
 		self.servKey = "AIzaSyCw_KuynDE61IJpeRYgssTHjZFWxo14RAg"
 		self.GCMPushService = models.GCMPush(self.servKey, True)
 
