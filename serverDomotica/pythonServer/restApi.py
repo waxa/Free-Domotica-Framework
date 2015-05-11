@@ -78,6 +78,7 @@ class Registro :
 		web.header("Access-Control-Allow-Methods","GET,POST,OPTIONS,PUT,DELETE")
 		jobj = json.loads(web.data())
 		controladora.setIdPush(jobj)
+		return json.dumps({"state" : "ok"})
 
 		
 if __name__ == "__main__":
