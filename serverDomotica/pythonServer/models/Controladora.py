@@ -17,14 +17,14 @@ class Controladora :
 
 		return json.loads(t.text)
 
- 	def setIdPush(self, jobj):
- 		if jobj["regid"] is not None :
- 			self.idTest = jobj["regid"]
+	def setIdPush(self, jobj):
+		if jobj["regid"] is not None :
+			self.idTest = jobj["regid"]
 
-    def getValues(self):
-    	r = requests.get(self.url+"getValues/")
+	def getValues(self):
+		r = requests.get(self.url+"getValues/")
 
 		return json.loads(t.text)
-
+	
 	def pushValues(self) :
 		self.GCMPushService.push([self.idTest], "Free Domotica Framework!", "Un sensor requiere tu atencion!")
