@@ -2,22 +2,26 @@
 
 import RPi.GPIO as GPIO
 
-class Lampara :
+class ActuadorRele :
 	
-	def __init__(self, name) :
+	def __init__(self, name, pin) :
+		self.name = name
+		self.pin = pin
+
 		GPIO.setwarnings(False)
 		GPIO.setmode(GPIO.BOARD)
-		GPIO.setup(11, GPIO.OUT)
-		self.name = name
+
+		GPIO.setup(self.pin, GPIO.OUT)
+		
 
 	def getState(self) :
 		aux = {}
 		aux["name"] = self.name
-		aux["state"] = GPIO.input(11)
+		aux["state"] = GPIO.input(self.pin)
 		return aux
 
 	def setValue(self, state) :
 		if state :
-			GPIO.output(11,1)
+			GPIO.output(self.pin,1)
 		else :
-			GPIO.output(11,0)
+			GPIO.output(self.pin,0)
