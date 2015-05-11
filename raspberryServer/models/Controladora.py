@@ -17,15 +17,15 @@ class Controladora :
 		
 		if jobj["name"].lower() == "rele2" :
 			self.rele2.setValue(jobj["state"]);
-			return self.lampara.getState()
+			return self.rele2.getState()
 		
 		if jobj["name"].lower() == "rele3" :
 			self.rele3.setValue(jobj["state"]);
-			return self.lampara.getState()
+			return self.rele3.getState()
 		
 		if jobj["name"].lower() == "rele4" :
 			self.rele4.setValue(jobj["state"]);
-			return self.lampara.getState()
+			return self.rele4.getState()
 		
 
 		return {}
