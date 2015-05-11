@@ -5,7 +5,8 @@ app.controller('DispositivosController', ['$http',DispositivosController]);
 function DispositivosController ($http) {
 
 	var dispositivos = this;
-	dispositivos.urlBase = "http://192.168.1.9:8080/"
+	dispositivos.urlBase = "http://95.39.206.192:5555/";
+	//dispositivos.urlBase = "http://192.168.1.9:8080/";
 	
 	dispositivos.dispos = [];
 
